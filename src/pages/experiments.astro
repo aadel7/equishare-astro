@@ -1,0 +1,18 @@
+---
+import Base from "@/layouts/Base.astro";
+import Banner from "@/layouts/components/Banner.astro";
+import KeyFeatures from "@/layouts/components/KeyFeatures.astro";
+import Testimonial from "@/layouts/components/Testimonial.astro";
+import Experiment from "@/layouts/components/Experiment.astro";
+import Cta from "@/layouts/partials/Cta.astro";
+import { getEntryBySlug } from "astro:content";
+
+const experiments = await getEntryBySlug("experiments", "index");
+const { our_experiment } = experiments.data;
+---
+
+<Base>
+  <!-- other components -->
+  <Experiment experiments={{ our_experiment }} />
+  <!-- other components -->
+</Base>

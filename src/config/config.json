@@ -1,0 +1,49 @@
+{
+  "site": {
+    "title": "EquiShare - STEM 4 Kids",
+    "base_url": "https://pinwheel-astro.vercel.app",
+    "base_path": "/",
+    "trailing_slash": false,
+    "favicon": "/images/favicon.png",
+    "logo": "/images/logo-equishare.png",
+    "logo_width": "100",
+    "logo_height": "100",
+    "logo_text": "EquiShare"
+  },
+
+  "settings": {
+    "pagination": 6,
+    "summary_length": 100,
+    "blog_folder": "blog"
+  },
+
+  "call_to_action": {
+    "title": "Join us in sparking curiosity!",
+    "description": "Volunteer today to inspire young minds through hands-on STEM experiments and make a lasting impact on the next generation of innovators.",
+    "button": {
+      "label": "Check our experiments",
+      "link": "/experiments"
+    }
+  },
+
+  "disqus": {
+    "enable": false,
+    "shortname": "themefisher-template",
+    "settings": {}
+  },
+
+  "params": {
+    "footer_description": "Lorem ipsum dolor sit sed dmi amet, consectetur adipiscing. Cdo tellus, sed condimentum volutpat.",
+    "email": "info@equishare.io",
+    "location": "Harvard University Massachusetts Hall Cambridge, MA 02138",
+    "phone": "+704-555-0127",
+    "contact_form_action": "#",
+    "copyright": "EquiShare 2024"
+  },
+
+  "metadata": {
+    "meta_author": "Themefisher",
+    "meta_image": "/images/og-image.png",
+    "meta_description": "pinwheel astro"
+  }
+}
