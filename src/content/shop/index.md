@@ -1,42 +1,36 @@
 ---
-title: "Experiments"
-page_title: "Check out our latest experiments"
+title: "Shop"
+page_title: "Check out our Kits"
 
-# our_experiment
-our_experiment:
-  - title: Experiment 1
+# our_product
+our_product:
+  - title: Product 1
     description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi egestas Werat viverra id et aliquet. vulputate egestas sollicitudin.
-    video:
-      thumbnail: "/images/intro-thumbnail.png"
-      video_id: "g3-VxLQO7do"
+    image: "/images/product-1.jpg"
     button:
-      label: Know About Us
+      label: Check Details
       link: "/about"
       enable: false
-  - title: Experiment 2
+  - title: Product 2
     description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi egestas Werat viverra id et aliquet. vulputate egestas sollicitudin.
-    video:
-      thumbnail: "/images/intro-thumbnail.png"
-      video_id: "g3-VxLQO7do"
+    image: "/images/product-2.jpg"
     button:
-      label: Know About Us
+      label: Check Details
       link: "/about"
       enable: false
-  - title: Experiment 3
+  - title: Product 3
     description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi egestas Werat viverra id et aliquet. vulputate egestas sollicitudin.
-    video:
-      thumbnail: "/images/intro-thumbnail.png"
-      video_id: "g3-VxLQO7do"
+    image: "/images/product-3.jpg"
     button:
-      label: Know About Us
+      label: Check Details
       link: "/about"
       enable: false
-  - title: Experiment 4
+  - title: Product 4
     description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi egestas Werat viverra id et aliquet. vulputate egestas sollicitudin.
-    video:
-      thumbnail: "/images/intro-thumbnail.png"
-      video_id: "g3-VxLQO7do"
+    image: "/images/product-4.jpg"
     button:
-      label: Know About Us
+      label: Check Details
       link: "/about"
       enable: false
+---
+Donec sollicitudin molestie malesda. Donec sollitudin molestie malesuada. Mauris pellentesque nec, egestas non nisi. Cras ultricies ligula sed magna dictum porta. Lorem

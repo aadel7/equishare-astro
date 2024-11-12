@@ -1,0 +1,17 @@
+---
+// src/components/Product.astro
+const { slug } = Astro.params;
+const products = [
+  { id: 1, name: 'Product 1', price: 100, description: 'Description of Product 1', slug: 'product-1' },
+  { id: 2, name: 'Product 2', price: 150, description: 'Description of Product 2', slug: 'product-2' },
+  { id: 3, name: 'Product 3', price: 200, description: 'Description of Product 3', slug: 'product-3' },
+];
+const product = products.find((p) => p.slug === slug);
+---
+
+<div class="product-details">
+  <h1>{product?.name}</h1>
+  <p>{product?.description}</p>
+  <p>${product?.price}</p>
+  <button>Add to Cart</button>
+</div>
