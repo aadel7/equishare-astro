@@ -1,17 +1,32 @@
 ---
 // src/components/Product.astro
-const { slug } = Astro.params;
-const products = [
-  { id: 1, name: 'Product 1', price: 100, description: 'Description of Product 1', slug: 'product-1' },
-  { id: 2, name: 'Product 2', price: 150, description: 'Description of Product 2', slug: 'product-2' },
-  { id: 3, name: 'Product 3', price: 200, description: 'Description of Product 3', slug: 'product-3' },
-];
-const product = products.find((p) => p.slug === slug);
+import { Image } from "astro:assets";
+const { product } = Astro.props;
 ---
 
-<div class="product-details">
-  <h1>{product?.name}</h1>
-  <p>{product?.description}</p>
-  <p>${product?.price}</p>
-  <button>Add to Cart</button>
+<div class="product max-w-3xl mx-auto my-12 p-6 border border-gray-200 rounded-lg shadow-lg bg-white">
+  <div class="product-image-container mb-8 text-center">
+    <Image 
+      src={product.image} 
+      alt={product.title} 
+      class="product-image w-full h-auto max-w-lg mx-auto object-cover rounded-md" 
+      width={667} 
+      height={498} 
+    />
+  </div>
+  
+  <div class="product-details text-center">
+    <h1 class="product-title text-3xl font-bold text-gray-900 mb-4">{product.title}</h1>
+    <p class="product-description text-gray-700 text-lg mb-6">{product.description}</p>
+    
+    <p class="product-price text-2xl font-semibold text-green-600 mb-8">
+      {product.price ? `$${product.price}` : "Price Not Available"}
+    </p>
+    
+    {product.button_product && product.button_product.enable && (
+      <a href={product.button_product.link} class="btn btn-white mt-8">
+        {product.button_product.label}
+      </a>
+    )}
+  </div>
 </div>

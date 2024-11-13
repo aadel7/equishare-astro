@@ -10,38 +10,39 @@ const { our_product } = shop;
   <div class="container grid grid-cols-1 lg:grid-cols-2 gap-12">
     {
       our_product.map((item: any, index: number) => (
-          <div class="flex flex-col items-center gap-6">
-            <div class="text-container text-center lg:text-left w-full">
-              <h2 class="text-2xl lg:text-3xl">{item.title}</h2>
-              <p class="mt-4">{item.description}</p>
-              <a href={item.button.link}>
+        <div class="flex flex-col items-center gap-6">
+          <div class="text-container text-center lg:text-left w-full">
+            <h2 class="text-2xl lg:text-3xl">{item.title}</h2>
+            <p class="mt-4">{item.description}</p>
+            
+            <a href={`/shop/product/${item.slug}`}> 
               <Image
-                    class="w-full object-contain"
-                    alt="service"
-                    width={667}
-                    height={498}
-                    src={item.image}
-                  />
+                class="w-full object-contain"
+                alt="service"
+                width={667}
+                height={498}
+                src={item.image}
+              />
+            </a>
+            
+            {item.button && item.button.enable && (
+              <a class="btn btn-white mt-6" href={`/shop/product/${item.slug}`}>  <!-- Dynamic link -->
+                {item.button.label}
               </a>
-              {item.button && item.button.enable && (
-                <a class="btn btn-white mt-6" href={item.button.link}>
-                  {item.button.label}
-                </a>
-              )}
-              <ul class="mt-6 text-dark lg:-ml-4">
-                {item.list &&
-                  item.list.map((list: any) => (
-                    <li class="mb-2 flex items-center rounded px-4">
-                      <AiFillCheckCircle className="mr-3 fill-primary text-white" />
-                      {list}
-                    </li>
-                  ))}
-              </ul>
-            </div>
+            )}
+            
+            <ul class="mt-6 text-dark lg:-ml-4">
+              {item.list &&
+                item.list.map((list: any) => (
+                  <li class="mb-2 flex items-center rounded px-4">
+                    <AiFillCheckCircle className="mr-3 fill-primary text-white" />
+                    {list}
+                  </li>
+                ))}
+            </ul>
           </div>
+        </div>
       ))
     }
   </div>
 </section>
-
-
