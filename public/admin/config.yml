@@ -16,4 +16,3 @@ collections:
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Featured", name: "featured", widget: "boolean", default: false }
       - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Image", name: "image", widget: "image" }
