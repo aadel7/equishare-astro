@@ -2,6 +2,8 @@ backend:
   name: github
   repo: aadel7/equishare-astro
   branch: main
+  site_domain: equishare-astro.vercel.app # Replace with your site's domain
+  base_url: https://equishare-astro.vercel.app # Replace with your production URL
   auth_endpoint: oauth
 
 media_folder: "public/images"
