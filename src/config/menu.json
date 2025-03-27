@@ -13,14 +13,6 @@
       "url": "/shop"
     },
     {
-      "name": "Experiments",
-      "url": "/experiments"
-    },
-    {
-      "name": "Blog",
-      "url": "/blog"
-    },
-    {
       "name": "Contact",
       "url": "/contact"
     }

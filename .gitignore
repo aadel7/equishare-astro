@@ -24,3 +24,7 @@ package-lock.json
 
 # ignore .astro directory
 .astro
+
+src/config/menu-backup-2025.json
+
+src/config/menu-backup.json
