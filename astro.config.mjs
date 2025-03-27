@@ -9,6 +9,7 @@ import remarkToc from "remark-toc";
 import config from "./src/config/config.json";
 import { defineConfig } from 'astro/config';
 import decapCmsOauth from 'astro-decap-cms-oauth';
+import vercel from "@astrojs/vercel/serverless";
 
 // https://astro.build/config
 export default defineConfig({
@@ -16,6 +17,8 @@ export default defineConfig({
   base: config.site.base_path ? config.site.base_path : "/",
   trailingSlash: config.site.trailing_slash ? "always" : "never",
   image: {},
+  output: "server",
+  adapter: vercel(),
   integrations: [
     react(),
     sitemap(),
