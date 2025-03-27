@@ -2,7 +2,7 @@ backend:
   name: github
   repo: aadel7/equishare-astro
   branch: main
-  auth_endpoint: oauth  # <-- Important for GitHub OAuth via astro-decap-cms-oauth
+  auth_endpoint: oauth
 
 media_folder: "public/images"
 public_folder: "/images"
