@@ -7,6 +7,8 @@ import { defineConfig } from "astro/config";
 import remarkCollapse from "remark-collapse";
 import remarkToc from "remark-toc";
 import config from "./src/config/config.json";
+import { defineConfig } from 'astro/config';
+import decapCmsOauth from 'astro-decap-cms-oauth';
 
 // https://astro.build/config
 export default defineConfig({
@@ -38,6 +40,7 @@ export default defineConfig({
       ],
     }),
     mdx(),
+    decapCmsOauth(),
   ],
   markdown: {
     remarkPlugins: [
@@ -55,4 +58,5 @@ export default defineConfig({
     },
     extendDefaultPlugins: true,
   },
+
 });

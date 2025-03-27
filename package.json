@@ -12,13 +12,14 @@
     "format": "prettier -w ."
   },
   "dependencies": {
-    "@astrojs/mdx": "^3.1.9",
+    "@astrojs/mdx": "^4.0.0",
     "@astrojs/react": "^3.6.2",
     "@astrojs/rss": "^4.0.9",
     "@astrojs/sitemap": "^3.2.1",
     "@astrojs/tailwind": "^5.1.2",
-    "astro": "^4.16.9",
+    "astro": "^5.5.5",
     "astro-auto-import": "^0.4.4",
+    "astro-decap-cms-oauth": "^0.5.1",
     "astro-font": "^0.1.81",
     "date-fns": "^4.1.0",
     "disqus-react": "^1.1.5",
