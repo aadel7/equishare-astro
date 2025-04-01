@@ -5,31 +5,39 @@
       "url": "/"
     },
     {
-      "name": "About",
+      "name": "Acerca de",
       "url": "/about"
     },
     {
-      "name": "Shop",
+      "name": "Tienda",
       "url": "/shop"
     },
     {
-      "name": "Contact",
+      "name": "Noticias ",
+      "url": "/news"
+    },
+    {
+      "name": "Blog",
+      "url": "/blog"
+    },
+    {
+      "name": "Contacto",
       "url": "/contact"
     }
   ],
 
   "footer": [
     {
-      "name": "About",
+      "name": "Acerca de",
       "url": "/about"
     },
     {
-      "name": "Contact",
+      "name": "Contacto",
       "url": "/contact"
     },
     {
-      "name": "Experiments",
-      "url": "/experiments"
+      "name": "Noticias",
+      "url": "/news"
     }
   ]
 }

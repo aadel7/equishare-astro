@@ -1,0 +1,80 @@
+---
+import { AiFillCheckCircle } from "react-icons/ai";
+import VideoComponent from "@/layouts/function-components/VideoComponent";
+
+const experiments = Astro.props.experiments || [];
+---
+
+<section class="section services">
+  <div class="container grid grid-cols-1 lg:grid-cols-2 gap-12">
+    {
+      experiments.length > 0
+        ? experiments.map((item: any) => (
+          <div class="flex flex-col gap-4 h-full">
+            <!-- IMAGE OR VIDEO -->
+            {item.video?.video_id ? (
+              <div class="w-full h-[400px] overflow-hidden rounded-lg">
+                <VideoComponent
+                  client:load
+                  src={item.image}
+                  height={400}
+                  width={400}
+                  title={item.title}
+                  video_id={item.video.video_id}
+                  video_width="w-full"
+                  video_height="h-full"
+                />
+              </div>
+            ) : item.image ? (
+              <div class="w-full h-[400px] overflow-hidden rounded-lg">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  class="w-full h-full object-cover rounded-md"
+                  loading="lazy"
+                />
+              </div>
+            ) : null}
+
+            <!-- TEXT BLOCK -->
+            <div class="w-full text-left h-[400px] flex flex-col justify-between bg-white p-4 rounded-md">
+              <!-- Title + Description Link -->
+              <div>
+                {item.text_link ? (
+                  <a href={item.text_link} class="block hover:text-primary transition-colors duration-200">
+                    <h2 class="text-2xl lg:text-3xl font-semibold">{item.title}</h2>
+                    <p class="mt-2 text-gray-700">{item.description}</p>
+                  </a>
+                ) : (
+                  <>
+                    <h2 class="text-2xl lg:text-3xl font-semibold">{item.title}</h2>
+                    <p class="mt-2 text-gray-700">{item.description}</p>
+                  </>
+                )}
+              </div>
+
+              <!-- Optional List -->
+              {item.list?.length > 0 && (
+                <ul class="mt-4 text-dark">
+                  {item.list.map((list: string) => (
+                    <li class="mb-2 flex items-center gap-2">
+                      <AiFillCheckCircle className="fill-primary" />
+                      {list}
+                    </li>
+                  ))}
+                </ul>
+              )}
+
+              <!-- Optional Button -->
+              {item.button?.enable && item.button.link && (
+                <a class="btn btn-white mt-6 inline-block self-start" href={item.button.link}>
+                  {item.button.label}
+                </a>
+              )}
+            </div>
+          </div>
+        ))
+        : <p class="col-span-2 text-center text-gray-500">No news available.</p>
+    }
+  </div>
+</section>

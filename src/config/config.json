@@ -18,11 +18,11 @@
   },
 
   "call_to_action": {
-    "title": "Join us in sparking curiosity!",
-    "description": "Volunteer today to inspire young minds through hands-on STEM experiments and make a lasting impact on the next generation of innovators.",
+    "title": "Únete a Equishare!",
+    "description": "Contactanos para participar como voluntario o para crear una colaboración.",
     "button": {
-      "label": "Check our experiments",
-      "link": "/experiments"
+      "label": "Contáctanos",
+      "link": "/contact"
     }
   },
 
@@ -33,7 +33,7 @@
   },
 
   "params": {
-    "footer_description": "Lorem ipsum dolor sit sed dmi amet, consectetur adipiscing. Cdo tellus, sed condimentum volutpat.",
+    "footer_description": "Conocimiento que inspira, curiosidad que transforma",
     "email": "info@equishare.io",
     "location": "Harvard University Massachusetts Hall Cambridge, MA 02138",
     "phone": "+704-555-0127",

@@ -1,0 +1,39 @@
+---
+import Base from "@/layouts/Base.astro";
+import Shape from "@/components/Shape.astro";
+import NewsComponent from "@/layouts/components/News.astro";
+import PageHeader from "@/components/PageHeader.astro";
+import { getEntry } from "astro:content";
+
+// Try to load the 'news/index' entry
+const news = await getEntry("news", "index");
+
+if (!news) {
+  throw new Error("News content not found");
+}
+
+const newsItems = news.data.news || [];
+
+const page_data = {
+  ...news.data,
+  content: news.body,
+};
+---
+
+<Base
+  title={news.data.title}
+  meta_title={news.data.meta_title}
+  description={news.data.description}
+  image={news.data.image}
+>
+  <Shape />
+  <section class="page-hero py-16">
+    <div class="container">
+      <div class="page-hero-content mx-auto max-w-[768px] text-center">
+        <PageHeader page_data={page_data} />
+      </div>
+
+      <NewsComponent experiments={newsItems} />
+    </div>
+  </section>
+</Base>

@@ -33,7 +33,11 @@ const { title, index_title, page_title, slug, content } = page_data || {};
             <a href={`/${slugify(index_title)}`} class="text-primary">
               {index_title}
             </a>{" "}
-            / {page_title ? page_title : humanize(slug.replace("page /", ""))}
+            / {page_title 
+                ? page_title 
+                : slug 
+                  ? humanize(slug.replace("page /", "")) 
+                  : title}
           </span>
         ) : (
           <span class="text-sm leading-none">/ {title}</span>
@@ -47,7 +51,10 @@ const { title, index_title, page_title, slug, content } = page_data || {};
       page_data?.page_title ? page_data?.page_title : page_data?.title
     )}
   />
-  <p set:html={markdownify(content)} />
+  <p
+  class="mt-4 text-sm leading-relaxed text-gray-800 space-y-3"
+  set:html={markdownify(content)}
+/>
 
   {
     page_data.buttons && (

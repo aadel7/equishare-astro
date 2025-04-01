@@ -1,11 +1,11 @@
 ---
 banner:
-  title: "Empower STEM learning with a seamless volunteer experience"
-  content: "Our platform streamlines sign-up, scheduling, and experiment resources, making it easy for you to inspire young minds."
+  title: "Acercando la ciencia a todos"
+  content: "Conocimiento que inspira, curiosidad que transforma"
   image: /images/stem-kids-2.jpg
   button:
-    label: Download The Theme
-    link: "https://themefisher.com/astro-themes/pinwheel-astro"
+    label: 
+    link: ""
     enable: false
 
 ##key features

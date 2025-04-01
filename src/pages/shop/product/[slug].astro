@@ -1,6 +1,6 @@
 ---
 // src/pages/shop/product/[slug].astro
-import { getEntryBySlug } from "astro:content";
+import { getEntry } from "astro:content";
 import Product from '@/components/shop/Product.astro';
 import Base from "@/layouts/Base.astro";
 import PageHeader from "@/components/PageHeader.astro";
@@ -9,7 +9,7 @@ import Shape from "@/components/Shape.astro";
 // Define getStaticPaths to specify all possible slugs
 export async function getStaticPaths() {
   // Fetch the shop data for the paths (adjust if you're using a CMS or different data source)
-  const shop = await getEntryBySlug("shop", "index");
+  const shop = await getEntry("shop", "index");
   const { our_product } = shop.data;
 
   // Return all paths for the dynamic [slug] route
@@ -20,7 +20,7 @@ export async function getStaticPaths() {
 
 // Fetch the shop data for the actual product
 const { slug } = Astro.params;
-const shop = await getEntryBySlug("shop", "index");
+const shop = await getEntry("shop", "index");
 const { our_product } = shop.data;
 
 // Find the product that matches the slug
