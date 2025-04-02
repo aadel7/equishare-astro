@@ -37,9 +37,11 @@ gallery:
     # - "/images/about/gallery-img-3.png"
     # - "/images/about/gallery-img-2.png"
     - "/images/about/kids-science-2.jpeg"
-    - "/images/about/kids-science-cartoon-1.jpeg"
+    # - "/images/about/kids-science-cartoon-1.jpeg"
     - "/images/about/kids-science-cartoon-2.jpeg"
-    - "/images/about/kids-science-2.jpeg"
+    - "/images/about/kids-science-3.jpeg"
+    - "/images/about/kids-science.jpeg"
+    # - "/images/about/kids-science-cartoon-4.png"
 
 ## our works
 features:

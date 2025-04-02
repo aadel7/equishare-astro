@@ -12,27 +12,34 @@ const { title, images } = gallery;
       </div>
     </div>
 
-    <div class="relative">
-      <div class="row" id="photo-gallery">
+    <div class="relative mt-12">
+      <div class="row -m-2" id="photo-gallery">
         {
-          images.map((image: any) => (
-            <div class="picture-item col-6 mt-12">
-              {" "}
-              <img class="w-full" src={image} alt="" />
+          images.map((image: any, index: number) => (
+            <div class="picture-item w-full sm:w-1/2 md:w-1/3 p-2" key={index}>
+              <img
+                src={image}
+                alt=""
+                class={`rounded-lg w-full object-cover shadow-md transition-transform duration-300 hover:scale-[1.03] ${
+                  index % 3 === 0 ? "h-80" : index % 3 === 1 ? "h-64" : "h-72"
+                }`}
+              />
             </div>
           ))
         }
 
-        <div class="js-shuffle-sizer col-1"></div>
+        <div class="js-shuffle-sizer hidden sm:block sm:w-1/2 md:w-1/3"></div>
       </div>
+
+      <!-- Decorative shapes -->
       <img
         class="absolute -bottom-5 -left-5 -z-[1]"
-        src="images/shape-2.png"
+        src="/images/shape-2.png"
         alt=""
       />
       <img
         class="absolute -right-5 bottom-20 -z-[1] h-16 w-16"
-        src="images/shape.png"
+        src="/images/shape.png"
         alt=""
       />
     </div>
@@ -43,10 +50,10 @@ const { title, images } = gallery;
   import Shuffle from "shufflejs";
   const element = document.getElementById("photo-gallery");
   const sizer = element.querySelector(".js-shuffle-sizer");
-  // Assumes you're using the UMD version of Shuffle (for example, from unpkg.com).
+
   const shuffleInstance = new Shuffle(element, {
     itemSelector: ".picture-item",
     sizer: sizer,
-    columnWidth: 1,
+    buffer: 1,
   });
 </script>
