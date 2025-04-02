@@ -19,6 +19,10 @@ export async function getStaticPaths() {
 
 const { slug } = Astro.props;
 
+console.log("Received slug:", slug); // Add this after Astro.props
+console.log("Astro.props:", Astro.props); // Add this to check all props
+console.log("Astro:", Astro); // Add this to check Astro object
+
 // Fetch post by slug
 const post = await getEntry("blog", slug);
 
