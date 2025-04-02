@@ -68,6 +68,11 @@ members:
   title: Quiénes somos
   description: El equipo de Equishare
   member_list:
+    - name: José Manuel Lisbona Montañez
+      field: Biomedicina
+      affiliations: Universidad de Málaga, IBIMA - Plataforma Bionand
+      image: "/images/users/user-1.png"
+      bio: Durante mi transcurso en el mundo académico siempre me ha entusiasmado la investigación, por ello decidí en 2015 estudiar la carrera de Biología y el Máster de Biotecnología Avanzada, ambas en la Universidad de Málaga. Trás eso, me incorporé al Grupo de Enfermedades Inflamatorias y autoinmunes del Instituto de Investigación Biomédica de Málaga (IBIMA). Actualmente me encuentro matriculado en el programa de doctorado en Biomedicina de la Universidad de Málaga, donde llevo a cabo mi tesis, enfocada en la búsqueda de biomarcadores de medicina personalizada en enfermedades inflamatorias. Me uní a EquiShare para, junto con mis compañeros, llevar la ciencia a jóvenes con el mismo entusiasmo que tenía yo con su edad, sin que la hospitalización sea un obstáculo para ellos.
     - name: Raquel Laza Briviesca, MSc, PhD.
       field: Inmuno-oncología
       affiliations: Boston Children's Hospital & Harvard Medical School
