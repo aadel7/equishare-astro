@@ -1,4 +1,6 @@
 ---
+export const prerender = true
+
 import Blogs from "@/components/Blogs.astro";
 import PageHeader from "@/components/PageHeader.astro";
 import Shape from "@/components/Shape.astro";
@@ -12,10 +14,10 @@ import { getSinglePage } from "@/lib/contentParser.astro";
 import { getTaxonomy } from "@/lib/taxonomyParser.astro";
 import { sortByDate } from "@/lib/utils/sortFunctions";
 import type { TIndexData } from "@/types";
-import { getEntryBySlug } from "astro:content";
+import { getEntry } from "astro:content";
 
 const { blog_folder } = config.settings;
-const blogIndex = (await getEntryBySlug<any, string>(
+const blogIndex = (await getEntry<any, string>(
   blog_folder,
   "-index",
 )) as TIndexData;

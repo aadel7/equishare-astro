@@ -1,38 +1,43 @@
 ---
-// src/pages/blog/[single].astro
-import Base from "@/layouts/Base.astro";
-import BlogSingle from "@/layouts/BlogSingle.astro";
-import { getCollection, getEntry } from "astro:content";
-import { AstroError } from "astro/errors";
-
-// Ensure this for prerendering
 export const prerender = true;
 
+import config from "@/config/config.json";
+import Base from "@/layouts/Base.astro";
+import BlogSingle from "@/layouts/BlogSingle.astro";
+import { getSinglePage } from "@/lib/contentParser.astro";
+
 export async function getStaticPaths() {
-  const posts = await getCollection("blog");
+  const posts = await getSinglePage(config.settings.blog_folder);
 
-  return posts.map((post) => ({
-    params: { single: post.slug },
-    props: { slug: post.slug },
+  const validPosts = posts.filter(
+    (post: any) =>
+      post?.slug &&
+      post.slug !== '-index' &&
+      typeof post.slug === 'string' &&
+      post.body // <- also check that body/content exists
+  );
+
+  const paths = validPosts.map((post: any) => ({
+    params: {
+      single: post.slug,
+    },
+    props: { post },
   }));
+
+  return paths;
 }
 
-const { slug } = Astro.props;
 
-console.log("Received slug:", slug); // Add this after Astro.props
-console.log("Astro.props:", Astro.props); // Add this to check all props
-console.log("Astro:", Astro); // Add this to check Astro object
-
-// Fetch post by slug
-const post = await getEntry("blog", slug);
-
-if (!post) {
-  throw new AstroError(`Post not found for slug: ${slug}`);
-}
-
-const { title, meta_title, description, image } = post.data;
+const { post } = Astro.props;
+console.log(post.data);
+// const { title, meta_title, description, image } = post.data;
 ---
 
-<Base title={title} meta_title={meta_title} description={description} image={image}>
+<Base
+  title=""
+  meta_title=""
+  description=""
+  image=""
+>
   <BlogSingle post={post} />
 </Base>
