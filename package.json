@@ -4,12 +4,13 @@
   "description": "Astro and Tailwindcss boilerplate",
   "author": "themefisher",
   "license": "MIT",
-  "packageManager": "yarn@1.22.19",
+  "packageManager": "npm@10.2.4",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "json": "node scripts/jsonGenerator.js",
-    "format": "prettier -w ."
+    "format": "prettier -w .",
+    "preview": "astro preview"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.0.0",

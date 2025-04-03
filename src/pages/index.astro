@@ -5,6 +5,7 @@ import KeyFeatures from "@/layouts/components/KeyFeatures.astro";
 import Testimonial from "@/layouts/components/Testimonial.astro";
 import Cta from "@/layouts/partials/Cta.astro";
 import { getEntry } from "astro:content";
+import Shape from "@/components/Shape.astro";
 
 const homepage = await getEntry("homepage", "index");
 const { banner, key_features, testimonial } = homepage.data;
@@ -15,4 +16,5 @@ const { banner, key_features, testimonial } = homepage.data;
   <!-- <KeyFeatures key_features={key_features} /> -->
   <!-- <Testimonial testimonial={testimonial} /> -->
   <Cta />
+  <Shape />
 </Base>

@@ -1,5 +1,5 @@
 ---
-export const prerender = true
+export const prerender = true;
 
 import Blogs from "@/components/Blogs.astro";
 import PageHeader from "@/components/PageHeader.astro";
@@ -13,21 +13,37 @@ import Cta from "@/layouts/partials/Cta.astro";
 import { getSinglePage } from "@/lib/contentParser.astro";
 import { getTaxonomy } from "@/lib/taxonomyParser.astro";
 import { sortByDate } from "@/lib/utils/sortFunctions";
+import { slugify } from "@/lib/utils/textConverter";
 import type { TIndexData } from "@/types";
 import { getEntry } from "astro:content";
 
-const { blog_folder } = config.settings;
+const { blog_folder, pagination } = config.settings;
+
 const blogIndex = (await getEntry<any, string>(
   blog_folder,
-  "-index",
+  "-index"
 )) as TIndexData;
+
 const posts = await getSinglePage(blog_folder);
-const categories = await getTaxonomy(config.settings.blog_folder, "categories");
+const categories = await getTaxonomy(blog_folder, "categories");
+
 const sortedPosts = sortByDate(posts);
 const featuredPost = sortedPosts.filter((item) => item.data.featured);
 const recentPost = sortedPosts.filter((item) => !item.data.featured);
-const totalPages = Math.ceil(recentPost.length / config.settings.pagination);
-const currentPosts = recentPost.slice(0, config.settings.pagination);
+
+// ✅ Get query parameter from URL for filtering
+const urlCategory = new URL(Astro.url).searchParams.get("category");
+
+// ✅ Filter posts by category if present
+const filteredPosts = urlCategory
+  ? recentPost.filter((post) =>
+      post.data.categories.map(slugify).includes(urlCategory)
+    )
+  : recentPost;
+
+// ✅ Pagination logic (optional - set to first page only)
+const currentPosts = filteredPosts.slice(0, pagination);
+const totalPages = Math.ceil(filteredPosts.length / pagination);
 ---
 
 <Base
@@ -45,14 +61,18 @@ const currentPosts = recentPost.slice(0, config.settings.pagination);
   <section class="section">
     <div class="container">
       <FeaturedBlog posts={featuredPost} />
-      <BlogCategories categories={categories} />
-      <h2 class="h4 mb-4">Recent Posts</h2>
-      <Blogs posts={currentPosts} />
-      <Pagination
-        section={blog_folder}
-        currentPage={1}
-        totalPages={totalPages}
-      />
+      <!-- <BlogCategories categories={categories} />
+      <h2 class="h4 mb-4">
+        {urlCategory ? `Posts in “${urlCategory}”` : "Recent Posts"}
+      </h2>
+      <Blogs posts={currentPosts} /> -->
+      {totalPages > 1 && (
+        <Pagination
+          section={blog_folder}
+          currentPage={1}
+          totalPages={totalPages}
+        />
+      )}
     </div>
   </section>
   <Cta />
