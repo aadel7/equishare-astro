@@ -5,7 +5,7 @@ page_title: "Lo último de EquiShare"
 news:
   - title: Primer evento organizado en el Hospital Regional de Malaga
     description: En el Hospital Materno Infantil, el proyecto EquiShare está llevando la ciencia a nuestros pacientes pediátricos a través de actividades educativas y divertidas. Gracias a la participación de voluntarios y miembros de grupos de investigación, los niños tienen la oportunidad de descubrir conceptos básicos de biología, matemáticas, geología y física mientras reciben tratamiento.
-    image: "https://media.licdn.com/dms/image/v2/D4D10AQHw5Y40K3w3-A/image-shrink_1280/B4DZUyyc_QHIAQ-/0/1740313842577?e=1744077600&v=beta&t=LPUYffHJAzREcbe2KFOK5NcHTOgxGGZOKNXTzYKW7EQ"
+    image: "/images/hospital_malaga.png"
     text_link: "https://www.linkedin.com/posts/hregionalmalaga_somoshregional-hrumcontigosiempre-activity-7299405452495216640-TKks/?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAACjMfLcBtKV9sb4euG1hF3VLF29aP5KvKkE"
     button:
       label: Mas Información
@@ -19,6 +19,16 @@ news:
       label: Mas Información
       link: ""
       enable: false
+
+  - title: ¡Estamos en Redes Sociales!  
+    description: Síguenos en nuestras nuevas redes sociales y forma parte de nuestra comunidad.  
+    image: "/images/estrenamos_redes_sociales.png"
+    text_link: "https://www.instagram.com/equishare_edu/" 
+    button:  
+      label: Síguenos  
+      link: "" 
+      enable: false
+
 
 
 ---

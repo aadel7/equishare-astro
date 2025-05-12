@@ -13,15 +13,15 @@ page_title: "Acerca de Equishare"
 # counter
 counter:
   - name: "Experimentos"
-    number: 10
+    number: 3
     messurment: M
     color: "#A3A1FB"
   - name: "Voluntarios"
-    number: 10
+    number: 6
     messurment: M
     color: "#5EE2A0"
   - name: "Eventos"
-    number: 1
+    number: 2
     messurment: K
     color: "#FE6019"
   - name: "Hospitales"
@@ -73,12 +73,12 @@ members:
     - name: José Manuel Lisbona Montañez
       field: Biomedicina
       affiliations: Universidad de Málaga, IBIMA - Plataforma Bionand
-      image: "/images/users/user-1.png"
+      image: "/images/users/jose.png"
       bio: Durante mi transcurso en el mundo académico siempre me ha entusiasmado la investigación, por ello decidí en 2015 estudiar la carrera de Biología y el Máster de Biotecnología Avanzada, ambas en la Universidad de Málaga. Trás eso, me incorporé al Grupo de Enfermedades Inflamatorias y autoinmunes del Instituto de Investigación Biomédica de Málaga (IBIMA). Actualmente me encuentro matriculado en el programa de doctorado en Biomedicina de la Universidad de Málaga, donde llevo a cabo mi tesis, enfocada en la búsqueda de biomarcadores de medicina personalizada en enfermedades inflamatorias. Me uní a EquiShare para, junto con mis compañeros, llevar la ciencia a jóvenes con el mismo entusiasmo que tenía yo con su edad, sin que la hospitalización sea un obstáculo para ellos.
     - name: Raquel Laza Briviesca, MSc, PhD.
       field: Inmuno-oncología
       affiliations: Boston Children's Hospital & Harvard Medical School
-      image: "/images/users/user-1.png"
+      image: "/images/users/raquel.png"
       bio: Soy Raquel, bióloga con un doctorado en inmuno-oncología, siempre motivada por
         comprender las enfermedades para contribuir a su cura desde el laboratorio. A lo largo de
         mi carrera, he generado conocimiento en el ámbito biomédico, guiada por mi pasión por el
@@ -89,7 +89,7 @@ members:
     - name: Marti Ortega-Ribera, MSc, PhD.
       field: Hepatologia
       affiliations: Beth Israel Deaconess Medical Center (BIDMC) & Harvard Medical School
-      image: "/images/users/user-1.png"
+      image: "/images/users/marti.png"
       bio: Soy Marti, biólogo con un doctorado en Medicina e investigación traslacional, ambos por la
             Universidad de Barcelona. Actualmente soy investigador postdoctoral en BIDMC en Boston
             donde estudio el efecto del alcohol en la enfermedad hepática, envejecimiento y daño
@@ -99,7 +99,7 @@ members:
     - name: Antonella Loiacono
       field: Química
       affiliations: Universidad Nacional de Córdoba - Universidad de La Laguna
-      image: "/images/users/user-1.png"
+      image: "/images/users/al.png"
       bio: Hola! Soy Anto. Estoy haciendo un doctorado en Química codirigido por la Universidad de La Laguna (España) y la Universidad Nacional de Córdoba (Argentina). Mi investigación se centra en el desarrollo de materiales para la producción de hidrógeno verde, un combustible prometedor para la descarbonización energética. Desde niña, siempre fui curiosa por la ciencia, y esa pasión me llevó a involucrarme en proyectos de divulgación científica. Me encanta compartir el conocimiento y despertar en otros la misma curiosidad que a mí me impulsó.
     - name: Fernando Hernández
       field: Economía

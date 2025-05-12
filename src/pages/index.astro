@@ -1,20 +1,37 @@
 ---
 import Base from "@/layouts/Base.astro";
 import Banner from "@/layouts/components/Banner.astro";
-import KeyFeatures from "@/layouts/components/KeyFeatures.astro";
-import Testimonial from "@/layouts/components/Testimonial.astro";
+import Blogs from "@/components/Blogs.astro"; // ✅ Use the shared Blogs component directly
 import Cta from "@/layouts/partials/Cta.astro";
-import { getEntry } from "astro:content";
 import Shape from "@/components/Shape.astro";
 
+import config from "@/config/config.json";
+import { getSinglePage } from "@/lib/contentParser.astro";
+import { sortByDate } from "@/lib/utils/sortFunctions";
+import { getEntry } from "astro:content";
+
+const { blog_folder, pagination } = config.settings;
+
+// ✅ Reuse the same data loading logic
 const homepage = await getEntry("homepage", "index");
-const { banner, key_features, testimonial } = homepage.data;
+const { banner } = homepage.data;
+
+const posts = await getSinglePage(blog_folder);
+const sortedPosts = sortByDate(posts);
+const recentPosts = sortedPosts.filter((item) => !item.data.featured);
+
+// ✅ Show only a few recent posts on the homepage (e.g., 3)
+const homepagePosts = sortedPosts.slice(0, 3); // This includes featured posts too
 ---
 
 <Base>
   <Banner banner={banner} />
-  <!-- <KeyFeatures key_features={key_features} /> -->
-  <!-- <Testimonial testimonial={testimonial} /> -->
+  <section class="section">
+    <div class="container">
+      <h2 class="h1 mb-4">Blog</h2>
+      <Blogs posts={homepagePosts} />
+    </div>
+  </section>
   <Cta />
   <Shape />
 </Base>
